@@ -110,7 +110,7 @@ pub type LuaBindFn = extern "C" fn(*mut lib::L2CValue, *const lib::utility::Vari
 #[derive(TypeAssert)]
 #[size = 0x48]
 pub struct L2CAgent {
-    #[offset = 0x00] vtable: *const *const c_void,
+    #[offset = 0x00] pub vtable: *const *const c_void,
     #[offset = 0x08] pub lua_state: *mut lua_State,
     #[offset = 0x10] function_map: cpp::HashMap<phx::Hash40, LuaBindFn>,
     #[offset = 0x38] pub battle_object: *mut c_void, // to become BattleObject

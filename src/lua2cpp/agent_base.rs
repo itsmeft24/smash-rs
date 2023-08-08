@@ -6,52 +6,52 @@ pub type StatusFn = extern "C" fn(*mut L2CAgentBase) -> lib::L2CValueHack;
 
 extern "C" {
     #[link_name = "_ZN7lua2cpp12L2CAgentBase14call_coroutineEiN3phx6Hash40E"]
-    fn call_coroutine(this: *mut L2CAgentBase, idx: i32, function_hash: phx::Hash40) -> phx::Fiber;
+    pub fn call_coroutine(this: *mut L2CAgentBase, idx: i32, function_hash: phx::Hash40) -> phx::Fiber;
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase14change_contextEPN3app12BattleObjectEPNS1_26BattleObjectModuleAccessorE"]
-    fn change_context(this: *mut L2CAgentBase, object: *mut app::BattleObject, module_accessor: *mut app::BattleObjectModuleAccessor);
+    pub fn change_context(this: *mut L2CAgentBase, object: *mut app::BattleObject, module_accessor: *mut app::BattleObjectModuleAccessor);
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase15clean_coroutineEi"]
-    fn clean_coroutine(this: *mut L2CAgentBase) -> bool;
+    pub fn clean_coroutine(this: *mut L2CAgentBase) -> bool;
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase15coroutine_yieldEv"]
-    fn coroutine_yield(this: *mut L2CAgentBase) -> bool;
+    pub fn coroutine_yield(this: *mut L2CAgentBase) -> bool;
 
     #[link_name = "_ZNK7lua2cpp12L2CAgentBase16get_parent_fiberEv"]
-    fn get_parent_fiber(this: *mut L2CAgentBase) -> phx::Fiber;
+    pub fn get_parent_fiber(this: *mut L2CAgentBase) -> phx::Fiber;
 
     #[link_name = "_ZNK7lua2cpp12L2CAgentBase26get_unused_coroutine_indexEi"]
-    fn get_unused_coroutine_index(this: *mut L2CAgentBase, max: i32) -> i32;
+    pub fn get_unused_coroutine_index(this: *mut L2CAgentBase, max: i32) -> i32;
 
     #[link_name = "_ZNK7lua2cpp12L2CAgentBase28is_coroutine_release_controlEv"]
-    fn is_coroutine_release_control(this: *mut L2CAgentBase) -> bool;
+    pub fn is_coroutine_release_control(this: *mut L2CAgentBase) -> bool;
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase25reserve_status_data_arrayEj"]
-    fn reserve_status_data_array(this: *mut L2CAgentBase, length: u32);
+    pub fn reserve_status_data_array(this: *mut L2CAgentBase, length: u32);
     
     #[link_name = "_ZN7lua2cpp12L2CAgentBase16resume_coroutineEiRi"]
-    fn resume_coroutine(this: *mut L2CAgentBase, index: i32, success: *mut i32) -> i32;
+    pub fn resume_coroutine(this: *mut L2CAgentBase, index: i32, success: *mut i32) -> i32;
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase13run_coroutineEiRiN5boost8optionalIPN3phx5FiberEEE"]
-    fn run_coroutine(this: *mut L2CAgentBase, index: i32, success: *mut i32, parent: cpp::Optional<*mut phx::Fiber>) -> i32;
+    pub fn run_coroutine(this: *mut L2CAgentBase, index: i32, success: *mut i32, parent: cpp::Optional<*mut phx::Fiber>) -> i32;
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase29set_coroutine_release_controlEb"]
-    fn set_coroutine_release_control(this: *mut L2CAgentBase, coroutine_release_control: bool);
+    pub fn set_coroutine_release_control(this: *mut L2CAgentBase, coroutine_release_control: bool);
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase15start_coroutineEiN3phx6Hash40ERi"]
-    fn start_coroutine(this: *mut L2CAgentBase, index: i32, function_name: phx::Hash40, success: *mut i32) -> i32;
+    pub fn start_coroutine(this: *mut L2CAgentBase, index: i32, function_name: phx::Hash40, success: *mut i32) -> i32;
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase19sv_copy_status_funcERKN3lib8L2CValueES4_S4_"]
-    fn sv_copy_status_func(this: *mut L2CAgentBase, dst_status_kind: *const lib::L2CValue, src_status_kind: *const lib::L2CValue, condition: *const lib::L2CValue);
+    pub fn sv_copy_status_func(this: *mut L2CAgentBase, dst_status_kind: *const lib::L2CValue, src_status_kind: *const lib::L2CValue, condition: *const lib::L2CValue);
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase21sv_delete_status_funcERKN3lib8L2CValueES4_"]
-    fn sv_delete_status_func(this: *mut L2CAgentBase, status_kind: *const lib::L2CValue, condition: *const lib::L2CValue);
+    pub fn sv_delete_status_func(this: *mut L2CAgentBase, status_kind: *const lib::L2CValue, condition: *const lib::L2CValue);
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase18sv_get_status_funcERKN3lib8L2CValueES4_"]
-    fn sv_get_status_func(this: *mut L2CAgentBase, status_kind: *const lib::L2CValue, condition: *const lib::L2CValue) -> lib::L2CValueHack;
+    pub fn sv_get_status_func(this: *mut L2CAgentBase, status_kind: *const lib::L2CValue, condition: *const lib::L2CValue) -> lib::L2CValueHack;
 
     #[link_name = "_ZN7lua2cpp12L2CAgentBase18sv_set_status_funcERKN3lib8L2CValueES4_Pv"]
-    fn sv_set_status_func(this: *mut L2CAgentBase, status_kind: *const lib::L2CValue, condition: *const lib::L2CValue, func: StatusFn);
+    pub fn sv_set_status_func(this: *mut L2CAgentBase, status_kind: *const lib::L2CValue, condition: *const lib::L2CValue, func: StatusFn);
 }
 
 #[repr(C)]

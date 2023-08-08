@@ -8,6 +8,7 @@ mod rect;
 mod table;
 mod utility;
 mod value;
+mod parameter_receiver;
 
 pub mod lib {
     use super::*;
@@ -25,4 +26,5 @@ pub mod lib {
     pub use rect::*;
     pub use table::*;
     pub use value::*;
+    pub use parameter_receiver::*;
 }
