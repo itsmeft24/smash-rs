@@ -3,18 +3,21 @@ use skyline::nn;
 use crate::{cpp, lib};
 
 #[repr(C)]
+#[derive(Debug)]
 pub struct UnkStruct1 {
     pub vtable: *const (),
     pub unk: cpp::SharedPtr<()>,
 }
 
 #[repr(C)]
+#[derive(Debug)]
 pub struct UnkStruct2 {
     pub vtable: *const (),
     pub unk: cpp::SharedPtr<()>,
 }
 
 #[repr(C)]
+#[derive(Debug)]
 pub struct FPA2Entry {
     pub unk1: i32,
     pub unk2: i32,
@@ -23,7 +26,7 @@ pub struct FPA2Entry {
 }
 
 #[repr(C)]
-#[derive(Clone, Copy)]
+#[derive(Debug, Clone, Copy)]
 pub struct FPA2Entry2 {
     pub unk1: i32,
     pub unk2: i32,
@@ -31,6 +34,7 @@ pub struct FPA2Entry2 {
 }
 
 #[repr(C)]
+#[derive(Debug)]
 pub struct FighterParam {
     pub base: lib::ParameterReceiver,
     pub vec: cpp::Vector<()>,
@@ -38,6 +42,7 @@ pub struct FighterParam {
 }
 
 #[repr(C)]
+#[derive(Debug)]
 pub struct FighterParamMotion {
     pub base: lib::ParameterReceiver,
     pub vec: cpp::Vector<()>,

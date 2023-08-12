@@ -2,6 +2,7 @@ use std::{ops::{Index, IndexMut, Range}, iter::FromIterator};
 use skyline::libc::free;
 
 #[repr(C)]
+#[derive(Debug)]
 pub struct Vector<T> {
     start: *mut T,
     end: *mut T,

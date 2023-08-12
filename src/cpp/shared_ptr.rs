@@ -1,4 +1,5 @@
 #[repr(C)]
+#[derive(Debug)]
 pub struct SharedPtr<T> {
     data: *mut T,
     shared_weak_count: *mut ()
