@@ -1,2 +1,2 @@
 #[repr(align(8))]
-pub struct Mutex([u8; 32]);
+pub struct Mutex(pub [u8; 32]);
