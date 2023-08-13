@@ -28,9 +28,9 @@ pub struct FPA2Entry {
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct FPA2Entry2 {
-    pub unk1: i32,
-    pub unk2: i32,
-    pub unk3: i32,
+    pub fighter_param_index: i32,
+    pub fighter_param_motion_index: i32,
+    pub fighter_param_thrown_index: i32,
 }
 
 #[repr(C)]
@@ -59,7 +59,7 @@ pub struct FighterParamAccessor2 {
     pub the_other_prcs: cpp::SharedPtr<()>,
     pub entries: [FPA2Entry; 94],
     pub entries_2: [FPA2Entry2; 94],
-    pub unk: cpp::SharedPtr<()>,
+    pub unk: cpp::SharedPtr<lib::ParameterReceiver>,
     pub unk_ref_count: u32, // NOT an atomic
     pub unk2: cpp::SharedPtr<lib::ParameterReceiver>,
     pub unk2_ref_count: u32, // NOT an atomic
